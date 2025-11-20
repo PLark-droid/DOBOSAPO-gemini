@@ -1,0 +1,252 @@
+/* Apple-Style Minimalist Theme */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+
+:root {
+    --bg-color: #fbfbfd;
+    --text-primary: #1d1d1f;
+    --text-secondary: #86868b;
+    --lark-teal: #00d6b9;
+    --lark-blue: #3370ff;
+    --accent-gradient: linear-gradient(135deg, #00d6b9 0%, #3370ff 100%);
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+.reveal {
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: var(--text-primary);
+    font-weight: 400;
+}
+
+/* Typography */
+.reveal h1,
+.reveal h2,
+.reveal h3 {
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    text-transform: none;
+}
+
+.reveal h1 {
+    font-size: 3.5em;
+    line-height: 1.1;
+}
+
+.reveal h2 {
+    font-size: 2.5em;
+}
+
+.reveal p {
+    font-size: 1.2em;
+    line-height: 1.5;
+    color: var(--text-secondary);
+}
+
+/* Dark Mode Slides */
+.dark-mode h1,
+.dark-mode h2,
+.dark-mode h3,
+.dark-mode p {
+    color: #f5f5f7 !important;
+}
+
+.dark-mode .subtext {
+    color: #86868b !important;
+}
+
+/* Components */
+
+/* Title Slide */
+.title-content h1 {
+    font-weight: 800;
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.title-content .subtitle {
+    font-size: 1.5em;
+    color: var(--text-primary);
+    font-weight: 300;
+}
+
+.title-content .footer {
+    margin-top: 60px;
+    font-size: 0.8em;
+    color: var(--text-secondary);
+}
+
+/* Bento Grid */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.bento-item {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.bento-item.highlight {
+    background: var(--accent-gradient);
+    color: white;
+}
+
+.bento-item.highlight .label,
+.bento-item.highlight .text {
+    color: white;
+}
+
+.bento-item .icon {
+    font-size: 3em;
+    margin-bottom: 15px;
+}
+
+.bento-item .label {
+    font-size: 0.8em;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--text-secondary);
+}
+
+.bento-item .text {
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+/* Big Statement */
+.big-text {
+    font-size: 3em !important;
+    font-weight: 800 !important;
+    line-height: 1.2;
+}
+
+.subtext {
+    margin-top: 20px;
+    font-weight: 300;
+}
+
+/* Clean List */
+.clean-list {
+    list-style: none;
+    padding: 0;
+    margin: 40px auto;
+    text-align: left;
+    width: fit-content;
+}
+
+.clean-list li {
+    font-size: 1.5em;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    color: var(--text-primary);
+}
+
+.highlight-text {
+    color: #ff3b30;
+    /* Apple Red */
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+/* Hero */
+.gradient-text {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-content h3 {
+    font-weight: 300;
+    margin-bottom: 40px;
+}
+
+/* Equation */
+.equation-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    font-size: 2em;
+    font-weight: 800;
+}
+
+.equation-container .term {
+    color: var(--text-primary);
+}
+
+.equation-container .operator {
+    color: var(--text-secondary);
+    font-weight: 300;
+}
+
+.equation-container .result {
+    background: var(--accent-gradient);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.5em;
+}
+
+/* Grid Pills */
+.grid-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 40px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.grid-pill {
+    background: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    font-weight: 600;
+    color: var(--lark-blue);
+}
+
+/* Quote */
+blockquote {
+    font-size: 2em;
+    font-style: italic;
+    font-weight: 300;
+    border: none;
+    box-shadow: none;
+    background: none;
+    color: var(--text-primary);
+}
+
+.author {
+    margin-top: 20px;
+    font-size: 1em;
+    color: var(--text-secondary);
+}
+
+/* Highlight Box */
+.highlight-box {
+    background: var(--accent-gradient);
+    color: white !important;
+    padding: 20px 40px;
+    border-radius: 12px;
+    display: inline-block;
+    font-weight: 600;
+    margin-top: 30px;
+    box-shadow: 0 10px 20px rgba(51, 112, 255, 0.3);
+}
