@@ -105,8 +105,8 @@
                 {
                     id: "dx_trap",
                     type: "big-statement",
-                    title: "DXの罠",
-                    subtitle: "「ストック」するな。<br>「フロー」させろ。",
+                    title: "DXという言葉の罠",
+                    subtitle: "「ストック」で満足するな。<br>「フロー」させろ。",
                     theme: "dark"
                 },
                 {
@@ -149,8 +149,16 @@
                     id: "demo_time",
                     type: "big-statement",
                     title: "論より証拠",
-                    subtitle: "実際の「血流」をお見せします",
+                    subtitle: "LarkとRPAのデモをお見せします。",
                     theme: "dark"
+                },
+                {
+                    id: "cta_end",
+                    type: "image-text",
+                    title: "この業務どうにかしたい！",
+                    text: "その悩み、まずはご相談ください。<br>一緒に「生存戦略」を考えましょう。",
+                    highlight: "ご相談をお待ちしています",
+                    image: "/Users/hiroki-matsui/.gemini/antigravity/brain/48006b81-ca22-4021-a0e2-7a5aa4f8c307/qr_code_placeholder_1763686423094.png"
                 }
             ]
         };
@@ -264,6 +272,7 @@
                         <div class="split-content">
                             <h2>${slide.title}</h2>
                             <p class="text-content">${slide.text}</p>
+                            ${slide.image ? `<img src="${slide.image}" class="slide-image fragment fade-in" alt="Slide Image" style="max-width: 300px; margin: 20px auto; display: block;">` : ''}
                             <p class="highlight-box fragment fade-in">${slide.highlight}</p>
                         </div>
                     `;
@@ -315,9 +324,14 @@
             const currentSlide = Reveal.getCurrentSlide();
             if (currentSlide && currentSlide.classList.contains('title-slide')) {
                 const prefix = document.getElementById('title-prefix');
-                if (prefix && !prefix.classList.contains('strike-through')) {
-                    prefix.classList.add('strike-through');
-                    playBuzzer();
+                if (prefix) {
+                    // Single Step: Erase (Vanish)
+                    if (!prefix.classList.contains('vanish')) {
+                        prefix.classList.add('vanish');
+                        // Optional: Play sound if desired for erase, or remove if silent
+                        // playBuzzer(); 
+                        e.stopPropagation();
+                    }
                 }
             }
         });

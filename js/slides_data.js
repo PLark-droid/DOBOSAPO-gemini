@@ -77,8 +77,8 @@ export const presentationData = {
         {
             id: "dx_trap",
             type: "big-statement",
-            title: "DXの罠",
-            subtitle: "「ストック」するな。<br>「フロー」させろ。",
+            title: "DXという言葉の罠",
+            subtitle: "「ストック」で満足するな。<br>「フロー」させろ。",
             theme: "dark"
         },
         {
@@ -121,8 +121,16 @@ export const presentationData = {
             id: "demo_time",
             type: "big-statement",
             title: "論より証拠",
-            subtitle: "実際の「血流」をお見せします",
+            subtitle: "LarkとRPAのデモをお見せします。",
             theme: "dark"
+        },
+        {
+            id: "cta_end",
+            type: "image-text",
+            title: "この業務どうにかしたい！",
+            text: "その悩み、まずはご相談ください。<br>一緒に「生存戦略」を考えましょう。",
+            highlight: "ご相談をお待ちしています",
+            image: "LarkQR.png"
         }
     ]
 };
