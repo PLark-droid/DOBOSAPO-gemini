@@ -192,10 +192,24 @@
             const currentSlide = Reveal.getCurrentSlide();
             if (currentSlide && currentSlide.classList.contains('title-slide')) {
                 const prefix = document.getElementById('title-prefix');
+                const companyName = document.getElementById('company-name');
+
                 if (prefix) {
                     // Single Step: Erase (Vanish)
                     if (!prefix.classList.contains('vanish')) {
                         prefix.classList.add('vanish');
+
+                        // Change company name
+                        if (companyName) {
+                            companyName.textContent = "株式会社Sei San Sei";
+                            // Optional: Add a subtle animation to the text change
+                            companyName.style.transition = "opacity 0.5s ease";
+                            companyName.style.opacity = "0";
+                            setTimeout(() => {
+                                companyName.style.opacity = "1";
+                            }, 50);
+                        }
+
                         // Optional: Play sound if desired for erase, or remove if silent
                         // playBuzzer(); 
                         e.stopPropagation();

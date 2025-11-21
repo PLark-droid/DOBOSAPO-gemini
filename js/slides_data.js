@@ -5,7 +5,7 @@ window.presentationData = {
             type: "title",
             title: "<span id='title-prefix'>もしも</span>建設業跡取りが<br>SEに転身したら",
             subtitle: "〜 地方建設業の生存戦略 〜",
-            footer: "<div class='presenter-info'>株式会社Sei San Sei<br>Larkパートナー 松井 大樹</div>"
+            footer: "<div class='presenter-info'><span id='company-name'>共栄建設株式会社</span><br>Larkパートナー 松井 大樹</div>"
         },
         {
             id: "whoami",
