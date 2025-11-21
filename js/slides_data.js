@@ -1,4 +1,4 @@
-const presentationData = {
+window.presentationData = {
     slides: [
         {
             id: "title",
