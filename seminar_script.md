@@ -1,101 +1,108 @@
-# Seminar Script: If a Construction Successor Reincarnated as an SE Again
+# Seminar Script
 
-## 0. Introduction (2 min)
+## 1. Title: もしも建設業跡取りがSEに転身したら
+**(Slide 1: Title)**
+*   **Visual:** "もしも建設業跡取りがSEに転身したら" (Initial)
+*   **Action:** Click -> Red "X" appears over "もしも" + "Bubu-" sound.
+*   **Script:**
+    「もしも、建設業の跡取りが、SEに転身したら...」
+    （クリック：ブブーッ！という音と共に「もしも」にバツ印）
+    「いいえ、これは『もしも』の話ではありません。現実に起きた、私の物語です。」
+    「そしてこれは、これから皆さんの会社で起こすべき『変革』の物語でもあります。」
 
-**(Slide 1: Title Slide)**
-"Hello everyone. Thank you for having me today.
-My name is Hiroki Matsui from Sei San Sei Co., Ltd.
-Today, I would like to speak to you under the title: 'If a Construction Successor Reincarnated as an SE Again'."
+## 2. Who am I? (Profile)
+**(Slide 2: Profile - Bento Grid)**
+*   **Visual:** "元建設業5代目跡取り"
+*   **Script:**
+    「改めまして、松井 大樹と申します。」
+    「私は、**元**建設業の5代目跡取りです。」
+    「かつてはヘルメットを被り、現場で汗を流していました。しかし今は、Larkという武器を手に、建設業の『生産性』を変えるパートナーとして活動しています。」
+そして、「株式会社Sei San Sei」の代表として、Larkパートナーも務めています。
 
-**(Slide 2: Who am I?)**
-"First, a brief introduction.
-I started my career as a Systems Engineer (SE) in Tokyo after graduating from graduate school. I spent 6 years there, immersed in the world of IT.
-Then, I made a U-turn back to my hometown, Hamamatsu, to succeed my father's construction business.
-And now? I stand before you not as a construction president, but as a 'Lark Evangelist' at a company called Sei San Sei."
+## 2. The Scale of Lark
+**(Slide 3: Lark Stats Intro)**
+今日、私が皆さんにお話しするのは「Lark」というツールです。
+まず、この数字を見てください。Larkを語る上で、絶対に外せない数字です。
 
-**(Slide 3: The Hook)**
-"You might be wondering about the title. 'Reincarnation'?
-It sounds like a light novel, but for me, it’s the best way to describe my journey.
-I went from the digital world of Tokyo to the analog world of local construction, and now, I'm combining both.
-Today, I want to share what happens when you look at our industry through the eyes of an SE, and the powerful tool I found called Lark."
+**(Slide 4: ByteDance Stats)**
+Larkは、あのTikTokを運営するByteDance社の基幹システムです。
+時価総額80兆円。
+この巨大企業の裏側で、Larkの開発にはなんと5,500人ものエンジニアが投入されています。
+そして最も驚くべきは、この数字です。
+ByteDanceのバックオフィス部門は、かつて1,000人いました。それがLark導入後、たったの18人になりました。
+1,000人が18人です。これが、Larkの破壊力です。
 
-## 1. The Struggle & The Encounter (4 min)
+## 4. What is Lark?
+**(Slide 5: What is Lark?)**
+*   **Script:**
+    「では、そのLarkとは一体何なのか？」
+    「一言で言えば『グループウェア』です。Microsoft 365やGoogle Workspaceと同じです。」
+    「しかし、決定的な違いがあります。それは『All-in-One』であることです。」
 
-**(Slide 4: Reality of Construction Management)**
-"When I returned to Hamamatsu as a successor, I was full of hope. But the reality was harsh.
-Paper everywhere. Phone calls for everything. Information scattered across whiteboards, notebooks, and memories.
-Despite my IT background, I struggled. I couldn't get the results I wanted as a manager.
-I felt helpless. I knew *how* technology could help, but I didn't have the right tool to bridge the gap."
+**(Slide 6: Basic Functions)**
+*   **Visual:** Grid of icons (Chat, Calendar, Task, Video, Wiki, Approval, Docs, Base, Email)
+*   **Script:**
+    「チャット、カレンダー、タスク管理、ビデオ会議、マニュアル作成、稟議承認、ドキュメント作成、データベース、メール...」
+    「これら全ての機能が、たった一つのアプリに入っています。」
+    「バラバラのアプリを行き来する必要は、もうありません。」
 
-**(Slide 5: Meeting Lark)**
-"That's when I met Lark.
-It was a shock.
-Chat, Documents, Video Conferencing, Approvals, Calendar... everything was in one app.
-Usually, you'd buy separate software for each of these. But Lark had it all, seamlessly integrated."
+**(Slide 7: Lark Equation)**
+*   **Visual:** GWS + Slack + Notion = Lark
+*   **Script:**
+    「よくこう例えられます。」
+    「Google Workspaceの機能に、Slackのチャット機能、そしてNotionの情報整理機能。」
+    「これらを足して、さらに使いやすく統合したのがLarkです。」
+チャット、カレンダー、タスク、ビデオ会議、ドキュメント、そしてデータベース。
+これら全てが、たった一つのアプリに入っています。
+PCでも、スマホでも、タブレットでも。全ての業務に、一つの入り口からアクセスできる。
+これが、MS365やGoogle Workspaceとの最大の違いです。
 
-**(Slide 6: Why it Clicked)**
-"For me, this was the missing piece.
-As an SE, I knew the power of integrated systems. As a construction manager, I knew the pain of disjointed communication.
-Lark wasn't just a 'chat tool'. It was a digital nervous system for the company.
-I realized: 'This is it. This is what can save us.'"
+**(Slide 7: The Organism Metaphor)**
+私は会社を「法人」、つまり一つの「人」として捉えています。
+Larkはその「身体」を作ります。
+**Lark Baseは「心臓」**です。情報をポンプのように送り出します。
+**Chatは「血管」**です。その情報を、滞りなく、瞬時に全身へ届けます。
+そして**経営者は「脳」**です。
+新鮮な血液（情報）が脳に届くからこそ、正しい判断ができる。
+会社を一つの生命体として機能させるツール。それがLarkなんです。
 
-## 2. The Awakening: BPaaS (4 min)
+## 4. The DX Trap
+**(Slide 8: Stock vs. Flow)**
+皆さん、「DX」と聞いて何を想像しますか？
+データ化？電子化？一元管理？
+多くの人が「情報の蓄積」、つまり「ストック」に意識がいってしまいます。
+はっきり言います。そこで思考停止してはいけません。
+重要なのはストックではなく、「フロー」です。
 
-**(Slide 7: Implementation & Results)**
-"I immediately implemented Lark in my father's company.
-The change was dramatic.
-Information that used to take hours to find was now a search away.
-Approvals that took days were done in minutes on a smartphone.
-I was so excited that I started posting about it on X (formerly Twitter).
-That's when the world started to open up. I connected with other Lark users and eventually became a Lark Partner."
+**(Slide 9: The Management Paradox)**
+「管理」するためにデータを溜め込むのはやめてください。
+行動が伴わないデータ蓄積は、ただのゴミです。
+管理は生産性を下げます。
+究極の生産性とは、「管理しない」ことです。
+いかに必要な情報を、必要な場所に流し、意思決定につなげるか。それだけを考えてください。
 
-**(Slide 8: What is BPaaS?)**
-"Now, I want to introduce a key concept: **BPaaS**.
-It stands for **Business Process as a Service**.
-It sounds technical, but think of it this way:
-It's combining **Lark** with **RPA** (Robotic Process Automation).
-It's not just about 'talking' on chat. It's about 'automating' the work.
-For example: A site manager sends a daily report on Lark. A robot automatically reads it and updates the Excel ledger. No double entry. No mistakes."
+## 5. The Legacy Wall & BPaaS
+**(Slide 10: The Wall)**
+とはいえ、私たちのいる建設業はレガシー産業です。
+行政が絡む書類、指定のExcel、紙での提出義務、FAX...。
+「印刷」という巨大な無駄が、私たちの道を阻みます。
+正直、ここを突破するのはLarkだけでは厳しい。
+Larkは無駄を徹底的に排除するツールですから、そもそも「印刷」なんて必要ないという思想で作られています。
 
-**(Slide 9: Why Construction Needs BPaaS)**
-"Why is this important for us?
-Because we are facing a massive labor shortage.
-We cannot just 'work harder' anymore. We don't have the people.
-We must 'work smarter'.
-BPaaS is the equalizer. It allows small local companies to have the efficiency of big corporations without the massive cost."
+**(Slide 11: BPaaS Intro)**
+そこで、私たちが提案しているのが「BPaaS」です。
+Larkに、「RPA（ロボット）」を組み合わせるのです。
 
-## 3. The Decision (3 min)
+**(Slide 12: RPA Role)**
+人間がPC上で行う、マウスとキーボードの作業。
+これをロボットに代行させます。
+Excelへの転記、行政システムへの入力、印刷...。
+これらはロボットに任せて、人間は「判断」と「現場」に集中する。
+これが、私たちが考える最強の布陣です。
 
-**(Slide 10: The Turning Point)**
-"As I dove deeper into Lark, something happened that changed my life.
-My mother passed away suddenly.
-It was a wake-up call.
-Her death left me with a profound message: **'Life is once.'** (人生は一度)
-I asked myself: 'Am I doing what I truly love? Am I using my life to its fullest?'"
-
-**(Slide 11: The Choice)**
-"In September 2025, I made a decision.
-I decided to step away from succeeding the family business.
-I chose to bet everything on Lark.
-Mr. Takahashi, the President of Sei San Sei, whom I met through X, invited me to join him.
-I accepted. Because I wanted to dedicate 100% of my passion to this tool that I believe can change our industry."
-
-## 4. Conclusion (2 min)
-
-**(Slide 12: Current Mission)**
-"Now, at Sei San Sei, I support various companies.
-Real Estate, Scaffolding, Steel, Welfare, Cosmetics...
-The industries are different, but the challenge is the same.
-Everyone wants to improve. Everyone wants to be more efficient.
-And I see Lark transforming them, just like it did for me."
-
-**(Slide 13: Message to Leaders)**
-"To all the leaders here today:
-Digital is not just a tool. It is a mindset.
-You don't need to be an SE like me. You just need the courage to try.
-Lark is not difficult. It's designed for people like us."
-
-**(Slide 14: Closing)**
-"Let's build the new form of the construction industry together.
-If you are interested in how BPaaS can help your company, please talk to me.
-Thank you very much."
+## 6. Conclusion & Demo
+**(Slide 13: Demo Intro)**
+御託は並べましたが、論より証拠です。
+実際に、情報がどのように「血流」として流れていくのか。
+そして、ロボットがどう働くのか。
+デモをお見せしましょう。

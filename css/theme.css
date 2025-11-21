@@ -1,108 +1,167 @@
-/* Apple-Style Minimalist Theme */
+/* Apple-Style Premium Theme - Full Viewport Edition */
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Noto+Sans+JP:wght@400;500;700&display=swap');
 
 :root {
-    --bg-color: #fbfbfd;
+    --bg-color: #ffffff;
     --text-primary: #1d1d1f;
     --text-secondary: #86868b;
     --lark-teal: #00d6b9;
     --lark-blue: #3370ff;
+    /* Subtler, more premium gradient */
     --accent-gradient: linear-gradient(135deg, #00d6b9 0%, #3370ff 100%);
+    --shadow-soft: 0 8px 30px rgba(0, 0, 0, 0.04);
+    --shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.08);
 }
 
 body {
     background-color: var(--bg-color);
+    margin: 0;
+    overflow: hidden;
+    /* Prevent scrollbars in presentation mode */
 }
 
 .reveal {
-    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-family: "Inter", "Noto Sans JP", -apple-system, BlinkMacSystemFont, sans-serif;
     color: var(--text-primary);
     font-weight: 400;
+    letter-spacing: 0.02em;
 }
 
-/* Typography */
-.reveal h1,
-.reveal h2,
-.reveal h3 {
-    font-weight: 600;
-    letter-spacing: -0.02em;
-    color: var(--text-primary);
-    text-transform: none;
+/* Full Viewport Layout */
+.reveal .slides {
+    width: 100vw !important;
+    height: 100vh !important;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
 }
 
+.reveal .slides section {
+    width: 100vw !important;
+    height: 100vh !important;
+    padding: 0 !important;
+    /* Reset padding, handle in content */
+    box-sizing: border-box;
+    display: flex !important;
+    /* Force flex for centering */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+/* Responsive Typography using clamp() - Tuned for Full Screen */
 .reveal h1 {
-    font-size: 3.5em;
+    font-size: clamp(3rem, 6vw, 6rem);
     line-height: 1.1;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+    max-width: 90vw;
 }
 
 .reveal h2 {
-    font-size: 2.5em;
+    font-size: clamp(2rem, 4.5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 0.8em;
+    max-width: 90vw;
 }
 
-.reveal p {
-    font-size: 1.2em;
-    line-height: 1.5;
+.reveal h3 {
+    font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.reveal p,
+.reveal li {
+    font-size: clamp(1.1rem, 2.2vw, 1.8rem);
+    line-height: 1.6;
     color: var(--text-secondary);
+    max-width: 80vw;
 }
 
 /* Dark Mode Slides */
 .dark-mode h1,
 .dark-mode h2,
 .dark-mode h3,
-.dark-mode p {
+.dark-mode p,
+.dark-mode li {
     color: #f5f5f7 !important;
 }
 
 .dark-mode .subtext {
-    color: #86868b !important;
+    color: #a1a1a6 !important;
 }
 
 /* Components */
 
 /* Title Slide */
+.title-content {
+    text-align: center;
+    max-width: 90vw;
+}
+
 .title-content h1 {
-    font-weight: 800;
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    margin-bottom: 20px;
+    margin-bottom: 4vh;
+    letter-spacing: -0.03em;
 }
 
 .title-content .subtitle {
-    font-size: 1.5em;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
     color: var(--text-primary);
-    font-weight: 300;
+    font-weight: 400;
+    margin-bottom: 8vh;
 }
 
 .title-content .footer {
-    margin-top: 60px;
-    font-size: 0.8em;
+    font-size: clamp(0.9rem, 1.5vw, 1.2rem);
     color: var(--text-secondary);
+    opacity: 0.8;
 }
 
-/* Bento Grid */
+/* Bento Grid - Full Width Responsive */
 .bento-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
-    margin-top: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: clamp(30px, 4vw, 60px);
+    width: 90vw;
+    max-width: 1600px;
+    /* Allow wider spread on large screens */
+    margin-top: 5vh;
 }
 
 .bento-item {
     background: white;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border-radius: 32px;
+    padding: clamp(30px, 5vw, 60px);
+    box-shadow: var(--shadow-soft);
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: transform 0.3s ease;
+    text-align: center;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease;
+    border: 1px solid rgba(0, 0, 0, 0.02);
+}
+
+.bento-item:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
 }
 
 .bento-item.highlight {
     background: var(--accent-gradient);
     color: white;
+    border: none;
 }
 
 .bento-item.highlight .label,
@@ -111,68 +170,89 @@ body {
 }
 
 .bento-item .icon {
-    font-size: 3em;
-    margin-bottom: 15px;
+    font-size: clamp(3rem, 6vw, 5rem);
+    margin-bottom: 2vh;
 }
 
 .bento-item .label {
-    font-size: 0.8em;
-    font-weight: 600;
+    font-size: clamp(0.9rem, 1.2vw, 1.2rem);
+    font-weight: 700;
     text-transform: uppercase;
+    letter-spacing: 0.1em;
     color: var(--text-secondary);
+    margin-bottom: 1vh;
 }
 
 .bento-item .text {
-    font-size: 1.1em;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
     font-weight: 600;
     color: var(--text-primary);
 }
 
 /* Big Statement */
+.center-content {
+    max-width: 90vw;
+}
+
 .big-text {
-    font-size: 3em !important;
+    font-size: clamp(3.5rem, 8vw, 8rem) !important;
     font-weight: 800 !important;
-    line-height: 1.2;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
 }
 
 .subtext {
-    margin-top: 20px;
-    font-weight: 300;
+    margin-top: 4vh;
+    font-weight: 400;
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
 }
 
 /* Clean List */
 .clean-list {
     list-style: none;
     padding: 0;
-    margin: 40px auto;
+    margin: 5vh auto;
     text-align: left;
     width: fit-content;
+    max-width: 90vw;
 }
 
 .clean-list li {
-    font-size: 1.5em;
-    padding: 15px 0;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+    padding: 2.5vh 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
     color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+}
+
+.clean-list li::before {
+    content: "•";
+    color: var(--lark-blue);
+    font-weight: bold;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
 }
 
 .highlight-text {
     color: #ff3b30;
-    /* Apple Red */
-    font-weight: 600;
-    margin-top: 30px;
+    font-weight: 700;
+    margin-top: 5vh;
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
 }
 
 /* Hero */
+.hero-content {
+    max-width: 90vw;
+}
+
 .gradient-text {
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-}
-
-.hero-content h3 {
-    font-weight: 300;
-    margin-bottom: 40px;
+    font-weight: 800;
 }
 
 /* Equation */
@@ -180,9 +260,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
-    font-size: 2em;
+    gap: clamp(20px, 3vw, 50px);
+    font-size: clamp(2rem, 5vw, 4rem);
     font-weight: 800;
+    flex-wrap: wrap;
+    width: 90vw;
 }
 
 .equation-container .term {
@@ -198,7 +280,12 @@ body {
     background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    font-size: 1.5em;
+    font-size: 1.2em;
+}
+
+.description {
+    margin-top: 4vh;
+    font-size: clamp(1.2rem, 2vw, 2rem);
 }
 
 /* Grid Pills */
@@ -206,47 +293,137 @@ body {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
-    margin-top: 40px;
-    max-width: 800px;
+    gap: 25px;
+    margin-top: 6vh;
+    max-width: 90vw;
     margin-left: auto;
     margin-right: auto;
 }
 
 .grid-pill {
     background: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    padding: 20px 40px;
+    border-radius: 100px;
+    box-shadow: var(--shadow-soft);
     font-weight: 600;
     color: var(--lark-blue);
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    transition: transform 0.2s ease;
+}
+
+.grid-pill:hover {
+    transform: scale(1.05);
 }
 
 /* Quote */
 blockquote {
-    font-size: 2em;
-    font-style: italic;
-    font-weight: 300;
+    font-size: clamp(2rem, 4.5vw, 4rem);
+    font-style: normal;
+    font-weight: 700;
     border: none;
     box-shadow: none;
     background: none;
     color: var(--text-primary);
+    line-height: 1.25;
+    margin-bottom: 4vh;
+    max-width: 90vw;
 }
 
 .author {
-    margin-top: 20px;
-    font-size: 1em;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
     color: var(--text-secondary);
+    font-weight: 500;
 }
 
 /* Highlight Box */
 .highlight-box {
     background: var(--accent-gradient);
     color: white !important;
-    padding: 20px 40px;
-    border-radius: 12px;
+    padding: 30px 60px;
+    border-radius: 20px;
     display: inline-block;
-    font-weight: 600;
-    margin-top: 30px;
-    box-shadow: 0 10px 20px rgba(51, 112, 255, 0.3);
+    font-weight: 700;
+    margin-top: 5vh;
+    box-shadow: 0 15px 30px rgba(51, 112, 255, 0.25);
+    font-size: clamp(1.5rem, 2.5vw, 2.5rem);
+}
+
+/* Dark Mode Specifics */
+.dark-mode {
+    background-color: #000000;
+}
+
+.dark-content h1 {
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    font-weight: 800;
+    letter-spacing: -0.03em;
+}
+
+/* Presenter Info - Specific Request */
+.presenter-info {
+    font-size: 40px !important;
+    color: var(--text-secondary);
+    margin-top: 20px;
+    font-weight: 500;
+}
+
+/* Red X Animation */
+.strike-through {
+    position: relative;
+    display: inline-block;
+}
+
+.strike-through::before,
+.strike-through::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    /* Thickness of the X */
+    background-color: #ff3b30;
+    /* Apple Red */
+    top: 50%;
+    left: 0;
+    opacity: 0;
+    border-radius: 2px;
+}
+
+/* First stroke (\) */
+.strike-through::before {
+    transform: rotate(20deg);
+    animation: strike1 0.3s ease-out 1s forwards;
+    /* Delay 1s */
+}
+
+/* Second stroke (/) */
+.strike-through::after {
+    transform: rotate(-20deg);
+    animation: strike2 0.3s ease-out 1.3s forwards;
+    /* Delay 1.3s */
+}
+
+@keyframes strike1 {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+
+    100% {
+        width: 110%;
+        opacity: 1;
+        left: -5%;
+    }
+}
+
+@keyframes strike2 {
+    0% {
+        width: 0;
+        opacity: 1;
+    }
+
+    100% {
+        width: 110%;
+        opacity: 1;
+        left: -5%;
+    }
 }

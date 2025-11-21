@@ -1,114 +1,128 @@
 export const presentationData = {
-    meta: {
-        title: "もしも建設業跡取りが再びSEに転生したら",
-        presenter: "松井 大樹",
-        company: "株式会社Sei San Sei"
-    },
     slides: [
-        // 0. Title
         {
+            id: "title",
             type: "title",
-            title: "もしも建設業跡取りが<br>再びSEに転生したら",
-            subtitle: "SIerから建設現場、そしてLarkエバンジェリストへ",
-            footer: "株式会社Sei San Sei | 松井 大樹"
+            title: "<span id='title-prefix'>もしも</span>建設業跡取りが<br>SEに転身したら",
+            subtitle: "〜 地方建設業の生存戦略 〜",
+            footer: "<div class='presenter-info'>株式会社Sei San Sei<br>Larkパートナー 松井 大樹</div>"
         },
-        // 1. Intro: Who am I
         {
+            id: "whoami",
             type: "bento",
             title: "Who am I?",
+            subtitle: "元建設業5代目跡取り",
             items: [
-                { label: "Past", text: "東京のSIer (6年)", icon: "💻" },
-                { label: "U-Turn", text: "浜松の建設会社 跡取り", icon: "🏗️" },
-                { label: "Now", text: "Larkエバンジェリスト", icon: "🐦", highlight: true }
+                { icon: "💻", label: "Background", text: "元SIer エンジニア" },
+                { icon: "👷", label: "Current", text: "元建設業 5代目" },
+                { icon: "🚀", label: "Role", text: "Larkパートナー" }
             ]
         },
-        // 2. The Hook
         {
+            id: "lark_stats",
             type: "big-statement",
-            text: "なぜ「転生」なのか？",
-            subtext: "デジタルとアナログを行き来した、数奇な物語。"
+            title: "Larkを語る上で<br>外せない数字",
+            subtitle: "世界最高峰の技術と実績"
         },
-        // 3. Reality
         {
-            type: "list",
-            title: "建設業経営の現実",
+            id: "stats_grid",
+            type: "bento",
+            title: "The Scale of Lark",
+            subtitle: "ByteDanceの基幹システム",
             items: [
-                "紙だらけの業務",
-                "鳴り止まない電話",
-                "散在する情報"
-            ],
-            highlight: "「跡取りとして結果が出せない...」"
+                { icon: "💰", label: "Market Cap", text: "時価総額 80兆円" },
+                { icon: "👨‍💻", label: "Engineers", text: "開発者 5,500人" },
+                { icon: "📉", label: "Back Office", text: "1,000人 → 18人" }
+            ]
         },
-        // 4. Meeting Lark
         {
-            type: "hero",
-            title: "Lark",
-            subtitle: "The Superapp for Work",
-            description: "Chat + Docs + Video + Approval",
-            gradient: true
+            id: "what_is_lark",
+            type: "image-text",
+            title: "Larkとは何か？",
+            text: "Microsoft 365やGoogle Workspaceと同じ「グループウェア」。<br>しかし、決定的な違いがあります。",
+            highlight: "All-in-One"
         },
-        // 5. Why it Clicked
         {
-            type: "quote",
-            text: "それは単なるツールではない。<br>会社の「神経系」だ。",
-            author: "SE × 建設業の視点"
+            id: "basic_functions",
+            type: "grid-pills",
+            title: "Basic Functions",
+            subtitle: "これら全てが、一つのアプリで完結します",
+            items: [
+                "Chat (チャット)", "Calendar (カレンダー)", "Task (タスク)",
+                "Video (ビデオ会議)", "Wiki (ナレッジ)", "Approval (承認)",
+                "Docs (ドキュメント)", "Base (データベース)", "Email (メール)"
+            ]
         },
-        // 6. BPaaS
         {
+            id: "lark_equation",
             type: "equation",
+            title: "Larkの定義",
+            subtitle: "よくこう例えられます",
+            left: "GWS + Slack",
+            operator: "+",
+            right: "Notion",
+            result: "Lark"
+        },
+        {
+            id: "organism_metaphor",
+            type: "bento",
+            title: "会社 ＝ 法人（ヒト）",
+            subtitle: "Larkが作る新しい身体の仕組み",
+            items: [
+                { icon: "❤️", label: "Base (心臓)", text: "情報をポンプのように送り出す" },
+                { icon: "🩸", label: "Chat (血管)", text: "情報を瞬時に全身へ届ける" },
+                { icon: "🧠", label: "Manager (脳)", text: "新鮮な血液で即座に判断する" }
+            ]
+        },
+        {
+            id: "dx_trap",
+            type: "big-statement",
+            title: "DXの罠",
+            subtitle: "「ストック」するな。<br>「フロー」させろ。",
+            theme: "dark"
+        },
+        {
+            id: "management_paradox",
+            type: "quote",
+            title: "管理のパラドックス",
+            quote: "管理は生産性を下げる。<br>究極は「管理しない」が最強の生産性。",
+            author: "行動につながらないデータ蓄積はゴミである"
+        },
+        {
+            id: "legacy_wall",
+            type: "list",
+            title: "レガシー産業の壁",
+            subtitle: "行政・慣習が立ちはだかる",
+            items: [
+                "指定のExcelフォーマット",
+                "紙での提出義務",
+                "FAX文化",
+                "「印刷」という無駄"
+            ]
+        },
+        {
+            id: "bpaas_intro",
+            type: "equation",
+            title: "BPaaS",
+            subtitle: "Larkだけでは越えられない壁を越える",
             left: "Lark",
             operator: "+",
-            right: "RPA",
-            result: "BPaaS",
-            description: "Business Process as a Service"
+            right: "RPA (Robot)",
+            result: "BPaaS"
         },
-        // 7. Why BPaaS
         {
-            type: "big-statement",
-            text: "人手不足は<br>「仕組み」で救う。",
-            subtext: "中小企業こそ、自動化の恩恵を。"
-        },
-        // 8. Turning Point
-        {
-            type: "dark",
-            title: "人生は一度",
-            subtitle: "母が残したメッセージ",
-            text: "自分の熱量を、本当に注ぎたいものは何か？"
-        },
-        // 9. The Decision
-        {
+            id: "rpa_role",
             type: "image-text",
-            title: "2025.09 決断",
-            text: "家業を離れ、Larkの道へ。<br>株式会社Sei San Seiへの参画。",
-            highlight: "建設業 × Lark に全てを懸ける"
+            title: "RPAの役割",
+            text: "人間がPC上で行うマウスとキーボードの作業を、<br>ロボットが自動で代行します。",
+            highlight: "無駄の徹底排除"
         },
-        // 10. Mission
         {
-            type: "grid",
-            title: "Current Mission",
-            items: ["不動産", "建設", "鋼材", "福祉", "化粧品"],
-            footer: "業種は違っても、課題は同じ。"
-        },
-        // 11. Message
-        {
+            id: "demo_time",
             type: "big-statement",
-            text: "デジタルは怖くない。",
-            subtext: "「変わりたい」という想いがあればいい。"
-        },
-        // 12. AI Reveal
-        {
-            type: "reveal",
-            title: "One More Thing...",
-            text: "このプレゼン資料、構成、デザイン、<br>そしてコードの全て。",
-            revealText: "Generated by AI",
-            subtext: "Google Gemini & Antigravity"
-        },
-        // 13. Closing
-        {
-            type: "title",
-            title: "Thank You",
-            subtitle: "建設業の新しい形を、共に創りましょう。",
-            footer: "株式会社Sei San Sei | 松井 大樹"
+            title: "論より証拠",
+            subtitle: "実際の「血流」をお見せします",
+            theme: "dark"
         }
     ]
 };
