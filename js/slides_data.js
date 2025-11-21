@@ -130,7 +130,7 @@ const presentationData = {
             title: "この業務どうにかしたい！",
             text: "その悩み、まずはご相談ください。<br>一緒に「生存戦略」を考えましょう。",
             highlight: "ご相談をお待ちしています",
-            image: "js/LarkQR.png"
+            image: "LarkQR.png"
         }
     ]
 };
