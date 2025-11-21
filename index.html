@@ -22,35 +22,43 @@
     <script src="js/slides_data.js"></script>
     <script>
         // Main initialization script
+        document.addEventListener('DOMContentLoaded', () => {
+            const presentationData = window.presentationData;
 
-        const container = document.getElementById('slide-container');
-        document.title = presentationData.meta.title;
-
-        presentationData.slides.forEach(slide => {
-            const section = document.createElement('section');
-
-            // Apply specific classes based on slide type
-            section.classList.add(slide.type + '-slide');
-            if (slide.type === 'dark' || slide.type === 'hero' || slide.type === 'reveal') {
-                section.setAttribute('data-background-color', '#000000');
-                section.classList.add('dark-mode');
+            if (!presentationData) {
+                console.error("Presentation data not found. Please check js/slides_data.js");
+                document.body.innerHTML = '<div style="color:white; text-align:center; padding-top:20%;"><h1>Error loading presentation data</h1><p>Please check the console for details.</p></div>';
+                return;
             }
 
-            let html = '';
+            const container = document.getElementById('slide-container');
+            document.title = presentationData.meta.title;
 
-            switch (slide.type) {
-                case 'title':
-                    html = `
+            presentationData.slides.forEach(slide => {
+                const section = document.createElement('section');
+
+                // Apply specific classes based on slide type
+                section.classList.add(slide.type + '-slide');
+                if (slide.type === 'dark' || slide.type === 'hero' || slide.type === 'reveal') {
+                    section.setAttribute('data-background-color', '#000000');
+                    section.classList.add('dark-mode');
+                }
+
+                let html = '';
+
+                switch (slide.type) {
+                    case 'title':
+                        html = `
                         <div class="title-content clickable-title">
                             <h1>${slide.title}</h1>
                             <p class="subtitle">${slide.subtitle}</p>
                             <div class="footer">${slide.footer}</div>
                         </div>
                     `;
-                    break;
+                        break;
 
-                case 'bento':
-                    html = `
+                    case 'bento':
+                        html = `
                         <h2>${slide.title}</h2>
                         <p class="subtext">${slide.subtitle || ''}</p>
                         <div class="bento-grid">
@@ -63,39 +71,39 @@
                             `).join('')}
                         </div>
                     `;
-                    break;
+                        break;
 
-                case 'big-statement':
-                    html = `
+                    case 'big-statement':
+                        html = `
                         <div class="center-content">
                             <h2 class="big-text fragment fade-in">${slide.title}</h2>
                             ${slide.subtitle ? `<p class="subtext fragment fade-in">${slide.subtitle}</p>` : ''}
                         </div>
                     `;
-                    break;
+                        break;
 
-                case 'list':
-                    html = `
+                    case 'list':
+                        html = `
                         <h2>${slide.title}</h2>
                         <p class="subtext">${slide.subtitle || ''}</p>
                         <ul class="clean-list">
                             ${slide.items.map(item => `<li class="fragment fade-up">${item}</li>`).join('')}
                         </ul>
                     `;
-                    break;
+                        break;
 
-                case 'quote':
-                    html = `
+                    case 'quote':
+                        html = `
                         <h2>${slide.title}</h2>
                         <blockquote class="fragment fade-in">
                             "${slide.quote}"
                         </blockquote>
                         <p class="author fragment fade-in">— ${slide.author}</p>
                     `;
-                    break;
+                        break;
 
-                case 'equation':
-                    html = `
+                    case 'equation':
+                        html = `
                         <h2>${slide.title}</h2>
                         <p class="subtext">${slide.subtitle || ''}</p>
                         <div class="equation-container">
@@ -106,29 +114,29 @@
                             <div class="result fragment fade-in scale-up">${slide.result}</div>
                         </div>
                     `;
-                    break;
+                        break;
 
-                case 'highlight-box':
-                    html = `
+                    case 'highlight-box':
+                        html = `
                         <div class="center-content">
                             <h2>${slide.title}</h2>
                             <div class="highlight-box fragment fade-in">${slide.text}</div>
                         </div>
                     `;
-                    break;
+                        break;
 
-                case 'grid-pills':
-                    html = `
+                    case 'grid-pills':
+                        html = `
                         <h2>${slide.title}</h2>
                         <p class="subtext">${slide.subtitle || ''}</p>
                         <div class="grid-container">
                             ${slide.items.map(item => `<span class="grid-pill fragment fade-in">${item}</span>`).join('')}
                         </div>
                     `;
-                    break;
+                        break;
 
-                case 'image-text':
-                    html = `
+                    case 'image-text':
+                        html = `
                         <div class="split-content">
                             <h2>${slide.title}</h2>
                             <p class="text-content">${slide.text}</p>
@@ -136,64 +144,65 @@
                             <p class="highlight-box fragment fade-in">${slide.highlight}</p>
                         </div>
                     `;
-                    break;
+                        break;
+                }
+
+                section.innerHTML = html;
+                container.appendChild(section);
+            });
+
+            Reveal.initialize({
+                hash: true,
+                transition: 'fade', // Apple-like fade
+                transitionSpeed: 'slow',
+                backgroundTransition: 'fade',
+                controls: false, // Cleaner look
+                progress: false, // Cleaner look
+                center: false, // Let CSS handle centering
+                disableLayout: true // Full viewport mode
+            });
+
+            // Sound Effect Logic
+            const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+            function playBuzzer() {
+                if (audioCtx.state === 'suspended') {
+                    audioCtx.resume();
+                }
+                const oscillator = audioCtx.createOscillator();
+                const gainNode = audioCtx.createGain();
+
+                oscillator.type = 'sawtooth'; // Buzzer-like wave
+                oscillator.frequency.setValueAtTime(150, audioCtx.currentTime); // Low pitch
+                oscillator.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.5); // Drop pitch
+
+                gainNode.gain.setValueAtTime(0.5, audioCtx.currentTime);
+                gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioCtx.destination);
+
+                oscillator.start();
+                oscillator.stop(audioCtx.currentTime + 0.5);
             }
 
-            section.innerHTML = html;
-            container.appendChild(section);
-        });
-
-        Reveal.initialize({
-            hash: true,
-            transition: 'fade', // Apple-like fade
-            transitionSpeed: 'slow',
-            backgroundTransition: 'fade',
-            controls: false, // Cleaner look
-            progress: false, // Cleaner look
-            center: false, // Let CSS handle centering
-            disableLayout: true // Full viewport mode
-        });
-
-        // Sound Effect Logic
-        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-
-        function playBuzzer() {
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume();
-            }
-            const oscillator = audioCtx.createOscillator();
-            const gainNode = audioCtx.createGain();
-
-            oscillator.type = 'sawtooth'; // Buzzer-like wave
-            oscillator.frequency.setValueAtTime(150, audioCtx.currentTime); // Low pitch
-            oscillator.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.5); // Drop pitch
-
-            gainNode.gain.setValueAtTime(0.5, audioCtx.currentTime);
-            gainNode.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.5);
-
-            oscillator.connect(gainNode);
-            gainNode.connect(audioCtx.destination);
-
-            oscillator.start();
-            oscillator.stop(audioCtx.currentTime + 0.5);
-        }
-
-        // Click interaction for Title Slide
-        document.addEventListener('click', (e) => {
-            // Check if we are on the title slide
-            const currentSlide = Reveal.getCurrentSlide();
-            if (currentSlide && currentSlide.classList.contains('title-slide')) {
-                const prefix = document.getElementById('title-prefix');
-                if (prefix) {
-                    // Single Step: Erase (Vanish)
-                    if (!prefix.classList.contains('vanish')) {
-                        prefix.classList.add('vanish');
-                        // Optional: Play sound if desired for erase, or remove if silent
-                        // playBuzzer(); 
-                        e.stopPropagation();
+            // Click interaction for Title Slide
+            document.addEventListener('click', (e) => {
+                // Check if we are on the title slide
+                const currentSlide = Reveal.getCurrentSlide();
+                if (currentSlide && currentSlide.classList.contains('title-slide')) {
+                    const prefix = document.getElementById('title-prefix');
+                    if (prefix) {
+                        // Single Step: Erase (Vanish)
+                        if (!prefix.classList.contains('vanish')) {
+                            prefix.classList.add('vanish');
+                            // Optional: Play sound if desired for erase, or remove if silent
+                            // playBuzzer(); 
+                            e.stopPropagation();
+                        }
                     }
                 }
-            }
+            });
         });
     </script>
 </body>
